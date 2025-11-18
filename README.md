@@ -1,8 +1,8 @@
-# 📘 Kafka Orders Processing System (Assignment)
+#  Kafka Orders Processing System (Assignment)
 _Applied Big Data Engineering — EC8203_  
 _University of Ruhuna_
 
-## 📝 1. Project Overview
+##  1. Project Overview
 
 This project implements a **Kafka-based real-time processing system** for order messages, using:
 
@@ -17,9 +17,9 @@ This demonstrates a complete end-to-end data pipeline.
 
 ---
 
-## 📦 2. System Features
+##  2. System Features
 
-### ✔ Avro Serialization
+###  Avro Serialization
 All messages follow this schema:
 
 ```json
