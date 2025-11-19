@@ -67,13 +67,13 @@ Each message includes a DLQ reason header.
 
 ## How to Run the Project
 
-### Step 1 — Start Kafka
+### Step 1  Start Kafka
 
 ```bash
 docker compose up -d
 ```
 
-### Step 2 — Create Topics
+### Step 2  Create Topics
 
 ```bash
 docker exec -it kafka-orders-assignment-kafka-1 bash
@@ -83,7 +83,7 @@ kafka-topics --bootstrap-server localhost:29092 --create --topic orders --partit
 kafka-topics --bootstrap-server localhost:29092 --create --topic orders-dlq --partitions 3 --replication-factor 1
 ```
 
-### Step 3 — Create Virtual Environment
+### Step 3  Create Virtual Environment
 
 ```bash
 python -m venv venv
@@ -91,26 +91,26 @@ python -m venv venv
 venv\Scripts\Activate.ps1
 ```
 
-### Step 4 — Install Dependencies
+### Step 4  Install Dependencies
 
 ```bash
 pip install confluent-kafka
 pip install avro-python3
 ```
 
-### Step 5 — Run Consumer
+### Step 5  Run Consumer
 
 ```bash
 python consumer.py
 ```
 
-### Step 6 — Run Producer
+### Step 6  Run Producer
 
 ```bash
 python producer.py
 ```
 
-### Step 7 — Test DLQ
+### Step 7  Test DLQ
 
 ```bash
 kafka-console-consumer --bootstrap-server localhost:29092 --topic orders-dlq --from-beginning
