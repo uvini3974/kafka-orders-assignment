@@ -32,3 +32,5 @@ All messages follow this schema:
     {"name": "price", "type": "float"}
   ]
 }
+
+## Real-Time Aggregation
