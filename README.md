@@ -1,6 +1,7 @@
 #  Kafka Orders Processing System (Assignment)
-_Applied Big Data Engineering — EC8203_  
-_University of Ruhuna_
+
+Applied Big Data Engineering — EC8203
+
 
 ## Project Overview
 
