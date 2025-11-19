@@ -1,6 +1,6 @@
 #  Kafka Orders Processing System (Assignment)
 
-Applied Big Data Engineering — EC8203
+Applied Big Data Engineering  EC8203
 
 
 ## Project Overview
