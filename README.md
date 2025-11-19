@@ -39,13 +39,13 @@ All messages follow this schema:
 
 -Global running average of order prices
 -Per-product running averages
-
+---
 ## Retry Logic
 
 -4 retry attempts
 -Exponential backoff (0.5s, 1s, 2s, 4s)
 -If still failing → DLQ
-
+---
 ## DLQ Support
 
 -Failed messages are published to
