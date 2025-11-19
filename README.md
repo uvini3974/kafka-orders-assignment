@@ -41,6 +41,77 @@ Global running average of all order prices
 Per-product running average
 
 Real-time updates in the consumer
+
+🔁 Retry Logic
+
+Up to 4 retry attempts
+
+Exponential backoff → 0.5s → 1s → 2s → 4s
+
+If still failing → message goes to DLQ
+
+🗃 DLQ Support
+
+Failed or unprocessable messages are sent to:
+
+orders-dlq
+
+
+Each message includes a DLQ reason header.
+
+⚙️ Technologies Used
+Component	Technology
+Messaging	Apache Kafka
+Serialization	Avro (avro-python3)
+Producer	Python + confluent-kafka
+Consumer	Python + confluent-kafka
+DLQ	Kafka secondary topic
+Retry Logic	Python + exponential backoff
+Orchestration	Docker Compose
+▶️ How to Run the Project
+Step 1 — Start Kafka
+docker compose up -d
+
+Step 2 — Create Topics
+docker exec -it kafka-orders-assignment-kafka-1 bash
+
+
+Inside the container:
+
+kafka-topics --bootstrap-server localhost:29092 --create --topic orders --partitions 3 --replication-factor 1
+kafka-topics --bootstrap-server localhost:29092 --create --topic orders-dlq --partitions 3 --replication-factor 1
+
+Step 3 — Create Virtual Environment
+python -m venv venv
+venv\Scripts\Activate.ps1
+
+Step 4 — Install Dependencies
+pip install confluent-kafka
+pip install avro-python3
+
+Step 5 — Run Consumer
+python consumer.py
+
+Step 6 — Run Producer
+python producer.py
+
+Step 7 — Test DLQ
+kafka-console-consumer --bootstrap-server localhost:29092 --topic orders-dlq --from-beginning
+
+📁 Project Structure
+kafka-orders-assignment/
+│
+├── producer.py
+├── consumer.py
+├── order.avsc
+├── README.md
+└── venv/
+
+
+
+
+
+Real-time updates in the consumer
 ## Real-Time Aggregat
 
 -Global running average of order prices
