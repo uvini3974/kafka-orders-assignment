@@ -34,12 +34,18 @@ All messages follow this schema:
   ]
 }
 ```
+📊 Real-Time Aggregation
 
+Global running average of all order prices
+
+Per-product running average
+
+Real-time updates in the consumer
 ## Real-Time Aggregat
 
 -Global running average of order prices
 -Per-product running averages
----
+
 ## Retry Logic
 
 -4 retry attempts
