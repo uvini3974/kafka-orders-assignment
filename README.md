@@ -116,17 +116,7 @@ python producer.py
 kafka-console-consumer --bootstrap-server localhost:29092 --topic orders-dlq --from-beginning
 ```
 
-## Project Structure
 
-```
-kafka-orders-assignment/
-│
-├── producer.py
-├── consumer.py
-├── order.avsc
-├── README.md
-└── venv/
-```
 
 
 ---
